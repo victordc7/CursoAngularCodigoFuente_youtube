@@ -1,0 +1,60 @@
+Aplicacion angular full-stack
+
+En este curso utilizaremos las siguientes herramientas
+Nodejs
+Servidor Express
+Chrome con extension postman
+Servidor base de datos MariaDB
+Administrador base de datos HeidiSql
+Editor de codigo vs code
+
+Para comenzar la configuracion crearemos una carpeta y dentro de ella usaremos el comando
+    npm init
+nos pedira una serie de datos debemos llenar (name, description, author) lo demas lo podemos dejar en blanco.
+nos retornara algo como esto
+    
+    About to write to C:\Users\victor\Documents\Paginas_web\Cursos\Dropbox\CursoAngularCodigoFuente_youtube\mariaDB\package.json:
+
+    {
+    "name": "angulardef",
+    "version": "1.0.0",
+    "description": "servidor con mariadb",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "vdc",
+    "license": "ISC"
+    }
+
+
+    Is this ok? (yes) 
+
+confirmamos escribiendo yes y ya habremos creado el package.json
+
+Ahora debemos instalar el servidor Express con el siguiente comando
+    npm install express --save
+    npm install body-parser --save
+luego instalaremos als dependencias para utilizar MySql con el siguiente comando
+    npm install mysql --save
+
+Podemos revisar en el archivo package.json que todas las dependencias esten correctamente instaladas, tambien podemos cambiar el nombre o la descripcion cuando lo deseemos.
+
+Creamos un nuevo archivo app.js en la misma carpeta que el package.json para crear la aplicacion del servidor.
+En este archivo primero debemos importar las librerias del servidor y del body-parser.
+    var express = require('express');
+    var bodyparser = require('body-parser');
+
+luego vamos a crear una app con
+    var app = express();
+    app.use(bodyparser.urlencoded({ extended: true }));
+    app.use(bodyparser.json());
+
+finalmente inciamos el servidor con la siguiente linea
+    var server = app.listen(8000, function(){
+    console.log('Escuchando en el puerto ', server.address().port);
+})
+
+para comprobar que quedo bien configurado escribimos en el terminal node y el nombre de la aplicacion en este caso app
+    node app
+lo cual nos deberia retornar el mensaje que esta dentro de la function.

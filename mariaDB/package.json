@@ -1,0 +1,16 @@
+{
+  "name": "angulardef",
+  "version": "1.0.0",
+  "description": "servidor con mariadb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vdc",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql": "^2.16.0"
+  }
+}
